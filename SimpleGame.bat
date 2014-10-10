@@ -33,6 +33,12 @@ echo What is your name?
 echo.
 set /p user= Desired Name: 
 echo.
+
+if not defined user (
+echo You must enter a username!
+pause>nul
+goto start
+)
 echo Teleporting %user% to menu....
 PING localhost -n 3 -w 60000 >nul
 goto menu
@@ -86,7 +92,7 @@ goto minigame1
 if %mini_cmd% == 1 goto mini_s
 if %mini_cmd% == 2 goto mini_h
 if %mini_cmd% == 3 goto menu
-goto mini_cmd
+goto minigame1
 
 :mini_s
 cls
