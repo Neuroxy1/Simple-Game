@@ -117,7 +117,7 @@ set /a mini_1_exp=%mini_1_exp% + 1
 cls
 echo.
 echo You're correct!
-PING localhost -n 2 -w 60000
+PING localhost -n 2 -w 60000 >nul
 if %mini_1_exp% == 1 goto mini_1
 
 :mini_1
